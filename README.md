@@ -1,5 +1,3 @@
-DO
-
 How to run : 
 1. virtualenv env
 2. . env/bin/activate
@@ -13,4 +11,3 @@ To Use :
 1. Go to http://127.0.0.1:8000/chats/ you can see the chat rooms
 2. Go to http://127.0.0.1:8000/admin/ you can manage the chatrooms and user. 
 
-P.S : I added both username and password because it was esy for me to use the Django autentication rather than building my own just with the username (Sorry I was in the time crunch)
