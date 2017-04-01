@@ -1,3 +1,5 @@
+prerequisite : You should have a open ssl install in your system
+
 How to run : 
 1. . env/bin/activate
 2. python manage.py runserver &
