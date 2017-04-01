@@ -2,10 +2,66 @@
 
 {% block content %}
 {{ block.super }}
-<h1> {{ chat.name }} </h1>
-<textarea name="term" id="inputbox" cols="40" rows="4"></textarea>
-<div id="message_list">
+	<head>
+<style>
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+  opacity: 0.3;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #6495ED;
+  color: white;
+  font-size: 23px;
+  padding: 16px 32px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img src="{{ MEDIA_URL }}header-bg.jpg" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text"> You can chat with others by joining to one of the chat room below <br/>
+       <h1> {{ chat.name }} </h1>
+	<div id="message_list">
   <ul>
   </ul>
 </div>
+<textarea name="term" id="inputbox" cols="40" rows="4"></textarea>
+       <div>
+	  <a href="/accounts/logout">logout</a> 
+	</div>
+    </div>
+  </div>
+</div>
+  
+</body>
 {% endblock %}

@@ -44,10 +44,9 @@ USE_L10N = True
 USE_TZ = True
 
 
-MEDIA_ROOT = ''
+MEDIA_ROOT = "/home/dj/ChatRoom/django_twisted_chat/static/images/"
 
-
-MEDIA_URL = ''
+MEDIA_URL = "http://localhost:8000/static/"
 
 
 STATIC_ROOT = ''

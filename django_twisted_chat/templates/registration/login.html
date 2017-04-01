@@ -1,8 +1,58 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+{{ block.super }}
 
-{% if form.errors %}
+	<head>
+<style>
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+  opacity: 0.3;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #6495ED;
+  color: white;
+  font-size: 23px;
+  padding: 16px 32px;
+}
+</style>
+</head>
+<body>
+
+
+<div class="container">
+  <img src="{{ MEDIA_URL }}header-bg.jpg" alt="Avatar" class="image" style="width:100%">
+  <div class="middle">
+    <div class="text"> Hi {{ user.username }} Welcome to the ChatRoom.<br/>
+	{% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
 
@@ -22,5 +72,10 @@
 <input type="submit" value="login" />
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
+      
+    </div>
+  </div>
+</div>
+  
 
 {% endblock %}
