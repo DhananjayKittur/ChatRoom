@@ -1,4 +1,4 @@
-prerequisite : You should have a open ssl install in your system
+prerequisite : You should have a open ssl installed in your system
 
 How to run : 
 1. . env/bin/activate
